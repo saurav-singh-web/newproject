@@ -1,0 +1,71 @@
+#input>div{
+    padding-bottom: 40px;
+    margin:auto;
+    margin-bottom: 50px;
+    width: 80%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+#input{
+    text-align: center;
+    width: 90%;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form{
+    margin: 0 auto; 
+    margin-top: 50px;
+    padding: 50px;
+}
+#cart{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: auto;
+    width: 90%;
+    margin: auto;
+}
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}   
+table th {
+  border: 5px solid white;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  text-align: center;
+  background-color: yellow;
+}
+table tr:nth-child(event){
+    background-color: azure;
+}
+table tr:hover {
+    background-color: #ddd;
+}
+* {
+    box-sizing: border-box;
+  }
+
+.input{
+    height: 50px;
+    width: 100%;
+  }
+#total{
+    text-align: center;
+}
+table td{
+    border: 5px solid white;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-align: center;
+}

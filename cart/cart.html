@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+<div>
+    <div id = input>
+        <h1>Add products to inventory</h1>
+        <div>
+            <form>
+    
+            <input id = "Product" class = "input" placeholder="Product Name"><br>
+              
+                    <select id = "Catogary" class = "input">
+                        <option value>Product Catogary</option>
+                        <option value="Grocery">Grocery</option>
+                        <option value="Electronic">Electronic</option> 
+                    </select>
+            <input id = "Brand" class = "input" placeholder="Brand">
+            <input id = "Amount" class = "input" type="number" placeholder="Product Price">
+            
+                    <select id = "Deliver" class = "input">
+                        <option value>Delivery</option>
+                        <option value="DeliveryVan">Delivery Van</option>
+                        <option value="DeliveryBike">Delivery Bike</option> 
+                    </select>
+            <button id = "button" class = "input">Add Inventory</button>
+
+            </form>
+                <tbody>
+                  <!-- input information will be intered here   -->
+                </tbody>
+        </div>  
+            <h2 id = "total"></h2>
+    </div>
+            <div id = cart>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Catogary</th>
+                            <th>Brand</th>
+                            <th>Price</th>
+                            <th>Delivered By</th>
+                            <th>Price Segment</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- input will be displayed here  -->
+                    </tbody>
+                </table>
+            </div>
+</div>       
+<script src="cart.js"></script>
+</body>
+</html>
