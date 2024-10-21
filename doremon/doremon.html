@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doremon</title>
+    <style>
+        #head-container{
+            height: 170px;
+            width: 200px;
+            margin: auto;
+            margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        #outer-head{        
+            margin: auto;    
+            height: 190px;
+            width: 190px;
+            border-radius: 100%;
+            background-color: blue;
+            border: solid black;
+        }
+        #inner-head{
+            height: 150px;
+            width: 150px;
+            position: absolute;
+            top: 33px;
+            left: 22px;
+            z-index:1;
+            border-radius: 100%;
+            background-color: white;
+            border: solid black;
+        }
+        #left-eye{
+            height: 40px;
+            width: 30px;
+            position: absolute;
+            top: 13px;
+            left: 65px;
+            z-index:2;
+            border-radius: 100%;
+            background-color: white;
+            border: solid black;
+        }
+        #left-eye-dot{
+            height: 7px;
+            width: 7px;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            z-index:3;
+        }
+        #right-eye-dot{
+            height: 7px;
+            width: 7px;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            z-index:3;
+        }
+        #right-eye{
+            height: 40px;
+            width: 30px;
+            position: absolute;
+            top: 13px;
+            right: 65px;
+            z-index:2;
+            border-radius: 100%;
+            background-color: white;
+            border: solid black;
+        }
+        #nose{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 50px;
+            right: 86px;
+            background-color: red;
+            border: solid black;
+            border-radius: 100%;
+            z-index:2;
+        }
+        #nose-line{
+            height: 50px;
+            width: 4px;
+            background-color: black;
+            position: absolute;
+            top: 75px;
+            right: 97px;
+            z-index:2;
+        }
+        #mouth-left{
+            border: 0px;
+            background-color: red;
+            border: solid 3px black;
+            border-right: 0px;
+            height: 28px;
+            width: 38px;
+            position: absolute;
+            top: 125px;
+            left: 59px;
+            z-index:2;
+            border-bottom-left-radius: 200%;
+        }
+        #mouth-right{
+            border: 0px;
+            background-color: red;
+            border: solid 3px black;
+            border-left: 0px;
+            height: 28px;
+            width: 38px;
+            position: absolute;
+            top: 125px;
+            right: 59px;
+            z-index:2;
+            border-bottom-right-radius: 200%;
+        }
+        #mooch-left-1{
+            z-index:3;
+            background-color: black;
+            height: 4px;
+            width: 30px;
+            position: absolute;
+            top: 77px;
+            left: 50px;
+            transform: rotate(15deg);
+        }
+        #mooch-left-2{
+            z-index:3;
+            background-color: black;
+            height: 4px;
+            width: 30px;
+            position: absolute;
+            top: 90px;
+            left: 50px;
+        }
+        #mooch-left-3{
+            z-index:3;
+            background-color: black;
+            height: 4px;
+            width: 30px;
+            position: absolute;
+            top: 103px;
+            left: 50px;
+            transform: rotate(-15deg);
+        }
+        #mooch-righ-1{
+            z-index:3;
+            background-color: black;
+            height: 4px;
+            width: 30px;
+            position: absolute;
+            top: 77px;
+            right: 50px;
+            transform: rotate(-15deg);
+        }
+        #mooch-righ-2{
+            z-index:3;
+            background-color: black;
+            height: 4px;
+            width: 30px;
+            position: absolute;
+            top: 90px;
+            right: 50px;
+        }
+        #mooch-righ-3{
+            z-index:3;
+            background-color: black;
+            height: 4px;
+            width: 30px;
+            position: absolute;
+            top: 103px;
+            right: 50px;
+            transform: rotate(15deg);
+        }
+        #body{
+            height: 250px;
+            width: 350px;
+            margin: auto;
+            position: relative;
+        }
+        #neck{
+            height: 8px;
+            width: 140px;
+            border: solid black;
+            background-color: red;
+            margin: auto;
+            border-top-left-radius:12px;
+            position: relative;
+            z-index: 5;
+            border-bottom-left-radius: 12px;
+            border-top-right-radius:12px;
+            border-bottom-right-radius: 12px;
+        }
+        #bell{
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            z-index: 5;
+            background-color: yellow;
+            border: solid black;
+            position: absolute;
+            top: 5px;
+            left: 160px;
+        }
+        #bell-1{
+            height: 2px;
+            width: 20px;
+            border: 1px solid black;
+            position: absolute;
+            border-radius: 50%;
+            top: 5px;
+            left: -1px;
+        }
+        #bell-2{
+            height: 7px;
+            width: 0px;
+            border: 1px solid black;
+            position: absolute;
+            border-radius: 50%;
+            top: 14px;
+            left: 9px;
+        }
+        #bell-3{
+            height: 2px;
+            width: 2px;
+            border: 1px solid black;
+            background-color: rgb(78, 78, 28);
+            position: absolute;
+            border-radius: 50%;
+            top: 11px;
+            left: 8px;
+        }
+        #left-hand{
+            height: 32px;
+            width: 80px;
+            border: solid black;
+            transform: rotate(-40deg);
+            position: absolute;
+            top: 32px;
+            left: 45px;
+            z-index: 1;
+            border-top-right-radius: 10px;
+            background-color: blue;
+        }
+        #left-pam{
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            border: solid black;
+            background-color: white;
+            position: absolute;
+            top: 60px;
+            left: 27px;  
+            z-index: 2;
+
+        }
+        #right-hand{
+            height: 32px;
+            width: 80px;
+            border: solid black;
+            transform: rotate(-30deg);
+            position: absolute;
+            top: 0px;
+            right: 45px;
+            z-index: 1;
+            border-bottom-left-radius: 12px;
+            background-color: blue;
+        }
+        #right-pam{
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            border: solid black;
+            background-color: white;
+            position: absolute;
+            top: -26px;
+            right: 27px;
+            z-index: 1;
+  
+        }
+        #outer-stomach{
+            height: 125px;
+            width: 133px;
+            border: solid black;
+            background-color: blue;
+            position: absolute;
+            top: 11px;
+            left: 105px;
+            z-index: 3;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+           
+
+        }
+        #invi-left{
+            background-color: blue;
+            height: 17px;
+            width: 10px;
+            position: absolute;
+            top: 15px;
+            border-top-left-radius: 5px;
+            left: 104px;
+            z-index: 3;
+        }
+        #invi-right{
+            background-color: blue;
+            height: 17px;
+            width: 10px;
+            position: absolute;
+            top: 14px;
+            border-top-right-radius: 5px;
+            right: 105px;
+            z-index: 3;
+        }
+        #inner-stomach{
+            height: 120px;
+            width: 120px;
+            border: solid black;
+            background-color: white;
+            border-top: 0px;
+            position: absolute;
+            top: 0px;
+            left: 111px;
+            border-radius: 100%;
+            z-index: 3;
+        }
+        #pocket-left{
+            background-color: rgb(227, 214, 214);
+            border: solid 3px black;
+            border-right: 0px;
+            height: 28px;
+            width: 35px;
+            position: absolute;
+            top: 50px;
+            left: 137px;
+            z-index:3;
+            border-bottom-left-radius: 200%;
+
+        }
+        #pocket-right{
+            background-color: rgb(227, 214, 214);
+            border: solid 3px black;
+            border-left: 0px;
+            height: 28px;
+            width: 35px;
+            position: absolute;
+            top: 50px;
+            right: 137px;
+            z-index:3;
+            border-bottom-right-radius: 200%;
+        }
+        #left-leg{
+            height: 30px;
+            width: 70px;
+            border: solid black;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 125px;
+            left: 100px;
+            z-index:4;
+        }
+        #right-leg{
+            height: 30px;
+            width: 70px;
+            border: solid black;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 125px;
+            right: 100px;
+            z-index:4;
+        }
+        #leg-gap{
+            height: 10px;
+            width: 10px;
+            border: solid black;
+            background-color: white;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            position: absolute;
+            top: 129px;
+            left: 167px;
+            z-index:3;
+        }
+    </style>
+</head>
+<body>
+    <div id = "head-container">
+        <div id = "outer-head"></div>
+        <div id = "inner-head"></div>
+        <div id = "left-eye">
+            <div id = "left-eye-dot"></div>
+        </div>
+        <div id = "right-eye">
+            <div id = "right-eye-dot"></div>
+        </div>
+        <div id = "nose"></div>
+        <div id = "nose-line"></div>
+        <div id = "mooch-left-1"></div>
+        <div id = "mooch-left-2"></div>
+        <div id = "mooch-left-3"></div>
+        <div id = "mooch-righ-1"></div>
+        <div id = "mooch-righ-2"></div>
+        <div id = "mooch-righ-3"></div>
+        <div id = "mouth-right"></div>
+        <div id = "mouth-left"></div>
+    </div>
+    <div id = "body">
+        <div id = "neck"></div>
+        <div id = "bell">
+            <div id = "bell-1"></div>
+            <div id = "bell-2"></div>
+            <div id = "bell-3"></div>
+        </div>
+        <div id = "left-hand"></div>
+        <div id = "left-pam"></div>
+        <div id = "right-hand"></div>
+        <div id = "right-pam"></div>
+        <div id = "outer-stomach"></div>
+        <div id = "invi-left"></div>
+        <div id = "invi-right"></div>
+        <div id = "inner-stomach"></div>
+        <div id = "pocket-left"></div>
+        <div id = "pocket-right"></div>
+        <div id = "left-leg"></div>
+        <div id = "right-leg"></div>
+        <div id = "leg-gap"></div>
+    </div>
+</body>
+</html>
