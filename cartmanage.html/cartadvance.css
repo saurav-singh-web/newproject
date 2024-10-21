@@ -1,0 +1,97 @@
+#container{
+height: auto;
+width: 85%;
+margin: auto;
+margin-top: 50px;
+gap: 20px;
+display: grid;
+grid-template-columns: repeat(6,1fr);
+grid-template-rows: auto;
+}
+#container>div{
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+justify-content: center;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+#container>div>img{
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    width: 90%;
+}
+.price{
+    height: 15%;
+    width: 100%;
+    text-align: center;
+}
+.add-to-cart{
+    width: 30%;
+    background-color: orange;
+    height: 30px;
+    margin-bottom: 20px;
+}
+#mycart{
+    width: 100%;
+    height: auto;
+    background-color: rgb(196, 218, 239);
+    display: grid;
+    grid-template-columns: 1200px auto;
+}
+#cartinfo{
+    width: 100%;
+    height: auto;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(1,1fr);
+}
+.product-item{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 200px auto;
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}   
+#img>img{
+    width: 100%;
+}
+#discription{
+    padding-left: 50px;
+}
+.remove-btn{
+    height: 50px;
+    width: 80px;
+    color: white;
+    border: 0;
+    background-color: rgb(196, 27, 27);
+}
+#total-price{
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    height: 272px;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+#total-price>div{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 35px;
+}
+#promo-code{
+    height: 30px;
+    width: 30%;
+}
+#apply-promo{
+    height: 30px;
+    width: 20%;
+    background-color: greenyellow;
+    color: black;
+}

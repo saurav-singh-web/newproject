@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list your productForm</title>
+    <style>
+        #heading{
+            text-align: center;
+        }
+
+        #container{
+            height: 300px;
+            width: 30%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    
+            margin: auto;
+            padding-top: 17px;
+            margin-top: 30px;
+        }
+        #container>div{
+            height: 90%;
+            width: 80%;
+            margin: auto;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id = "heading">admin portal</h1>
+    <div id = container>
+        <div>
+            <form id="productForm">
+                <label for="name">Product Name:</label>
+                <input class = "input" id = "name"><br><br>
+        
+                <label for="category">Category:</label>
+                <input class = "input" id = "category"><br><br>
+        
+                <label for="image">Image URL:</label>
+                <input class = "input" id = "image"><br><br>
+        
+                <label for="price">Price:</label>
+                <input class = "input" id = "price" type="number"><br><br>
+        
+                <label for="gender">Gender:</label>
+                <select class = "input" id = "gender">
+                <option>select gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                </select><br><br>
+        
+                <label for="sold">Sold:</label>
+                <select class = "input" id = "sold">
+                <option>false</option>
+                <option>true</option>
+                </select><br><br>
+        
+                <button id = "add" type="button">add Product</button>
+            </form>
+        </div> 
+    </div>
+</body>
+</html>
+<script src = "admin.js"></script> 

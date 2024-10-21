@@ -1,0 +1,12 @@
+body>h1{
+    text-align: center;
+}
+#search-container{
+    margin: auto;
+    height: 40px;
+    width: 700px;
+}
+#search{
+    height: 100%;
+    width: 100%;
+}

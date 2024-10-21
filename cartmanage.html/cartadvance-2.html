@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's cart</title>
+    <link rel="stylesheet" href="cartadvance.css">
+</head>
+<body>
+    <div id = "mycart">
+        <div id = "cartinfo"></div>
+        <div id="total-price">
+            <div>
+                <h2> Price: $<span id="price-value">0</span></h2>
+                <div id="promo-section">
+                    <input type="text" id="promo-code" placeholder="Enter Promo Code">
+                    <button id="apply-promo">Apply Promo</button>
+                </div>
+                <div id="discounted-price">
+                    <div id="discount-amount">
+                        <h3>Amount Saved: $<span id="saved-value">0</span></h3>
+                    </div>
+                    <h2>Discounted Price: $<span id="discount-value">0</span></h2>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+let totalPrice = 0; 
+let discountApplied = false;
+
+     function calculateTotalPrice(cart) {
+            let totalPrice = 0;
+            cart.forEach(product => {
+                totalPrice += parseFloat(product.price);
+            });
+            return totalPrice.toFixed(2);
+        }
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cartinfo');
+            const myCart = document.getElementById('mycart');
+            const priceDisplay = document.getElementById('price-value');
+            cartContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<h1  style="text-align: center;">Your cart is empty.</h1>';
+                myCart.style.height = '900px';
+                priceDisplay.innerText = '0';
+                document.getElementById('discount-value').innerText = '0'; 
+                document.getElementById('saved-value').innerText = '0'; 
+                return;             
+            } else {
+                myCart.style.height = 'auto';
+            }
+            cart.forEach((product, index) => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product-item';
+                productDiv.innerHTML = `
+                    <div>
+                        <div id = "img">
+                        <img src="${product.image}" alt="Product Image" width="100">
+                        </div>
+                    </div>
+                    <div id = "discription">
+                        <h2><strong>Name:</strong> ${product.name}</h2>
+                        <p><strong>Price:</strong> $${product.price}</p>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </div>
+                `;
+                cartContainer.appendChild(productDiv);
+            });
+
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', removeFromCart);
+            });
+
+            totalPrice = calculateTotalPrice(cart);
+            priceDisplay.innerText = totalPrice;
+
+            if (discountApplied) {
+                applyPromoCode();
+            }
+        }
+
+        function removeFromCart(event) {
+            const button = event.target;
+            const productIndex = button.getAttribute('data-index');
+            
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.splice(productIndex, 1);
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            displayCart();
+
+        }
+        function applyPromoCode() {
+            const promoCode = document.getElementById('promo-code').value;
+            const discountDisplay = document.getElementById('discount-value'); 
+            const savedDisplay = document.getElementById('saved-value');
+            const originalPrice = totalPrice; 
+
+            if (promoCode === 'masai30') {
+                const discount = totalPrice * 0.30;
+                const discountedPrice = (totalPrice - discount).toFixed(2);
+                discountDisplay.innerText = discountedPrice;
+                savedDisplay.innerText = discount.toFixed(2);
+                discountApplied = true;
+            } else {
+                discountDisplay.innerText = totalPrice; 
+                alert('Invalid Promo Code');
+                savedDisplay.innerText = '0';
+                discountApplied = false;
+            }
+        }
+        document.getElementById('apply-promo').addEventListener('click', applyPromoCode);
+
+        displayCart();
+</script>

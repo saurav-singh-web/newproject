@@ -52,8 +52,7 @@ table tr:hover {
 }
 * {
     box-sizing: border-box;
-  }
-
+}
 .input{
     height: 50px;
     width: 100%;
